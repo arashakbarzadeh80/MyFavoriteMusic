@@ -1,0 +1,172 @@
+﻿@page
+@{
+    ViewData["Title"] = "My Favorite Music";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Favorite Music</title>
+
+    <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #e8eaf6;
+                text-align: center;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .container {
+                background-color: white;
+                max-width: 850px;
+                margin: 30px auto;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            }
+
+            h1 {
+                color: #4a148c;
+                font-size: 36px;
+            }
+
+            h2 {
+                color: #6a1b9a;
+            }
+
+            p {
+                color: #444;
+                font-size: 18px;
+                line-height: 1.6;
+            }
+
+            iframe {
+                max-width: 100%;
+                border-radius: 12px;
+            }
+
+            button {
+                background-color: #6a1b9a;
+                color: white;
+                padding: 12px 25px;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #9c27b0;
+            }
+
+            .animation-area {
+                position: relative;
+                height: 130px;
+                overflow: hidden;
+                margin-top: 20px;
+            }
+
+            #musicNote {
+                font-size: 45px;
+                display: inline-block;
+                opacity: 0;
+            }
+
+            .animate {
+                animation: moveNote 3s ease-in-out;
+            }
+
+            @@keyframes moveNote {
+                0% {
+                    transform: translateY(80px) rotate(0deg);
+                    opacity: 0;
+                }
+
+                50% {
+                    transform: translateY(0px) rotate(180deg);
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateY(-60px) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Welcome to My Music Website!</h1>
+
+        <h2>My Favorite Song: Imagine</h2>
+
+        <p>
+            One of my favorite songs is Imagine
+            by John Lennon. I love this song because
+            it has a beautiful melody and a meaningful
+            message about peace, unity, and hope.
+        </p>
+
+        <h2>Watch the Music Video</h2>
+
+        <!-- Embedded YouTube Video -->
+
+        <iframe width="560"
+                height="315"
+                src="https://www.youtube.com/embed/YkgkThdzX-8"
+                title="Imagine by John Lennon"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write;
+            encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+
+        <h2>Enjoy the Music Animation!</h2>
+
+        <p>
+            Click the button below to see a musical
+            note animation created with JavaScript.
+        </p>
+
+        <!-- Animation Button -->
+
+        <button onclick="animateMusic()">
+            Click Me!
+        </button>
+
+        <!-- Animation Area -->
+
+        <div class="animation-area">
+            <span id="musicNote">🎵</span>
+        </div>
+
+        <p>Thank you for visiting my music website!</p>
+
+    </div>
+
+    <script>
+
+            // JavaScript Animation Function
+
+            function animateMusic() {
+
+                let note = document.getElementById("musicNote");
+
+                // Restart the animation
+                note.classList.remove("animate");
+
+                // Reset the animation
+                void note.offsetWidth;
+
+                // Start the animation
+                note.classList.add("animate");
+            }
+
+    </script>
+
+</body>
+</html>
